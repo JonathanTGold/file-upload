@@ -1,0 +1,13 @@
+<div *ngFor="let file of fileTransferenceData" class="indicatorcontainer">
+  <fa-icon [icon]="faFileAlt" class="faFileAlt"></fa-icon>
+  <div class="progressbar">
+    <div class="filename">{{file.fileName | uppercase}}</div>
+    <div class="filesize">{{(file.snapshotChanges | async)?.bytesTransferred / 1000000 | number:'.0-2'}} MB</div>
+    <mat-progress-bar mode="determinate" [value]="file.percentage | async"></mat-progress-bar>
+  </div>
+  <fa-icon *ngIf="(file.snapshotChanges | async)?.state !== 'success' else success" [icon]="faTrashAlt"
+    class="faTrashAlt" (click)="file.cancel()"></fa-icon>
+  <ng-template #success>
+    <fa-icon [icon]="faCheckCircle" class="CheckCircleIcon"></fa-icon>
+  </ng-template>
+</div>

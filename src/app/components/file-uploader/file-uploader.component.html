@@ -1,0 +1,21 @@
+<div class="file-input-container">
+  <div class="file-input-text">
+    <fa-icon [icon]="faUpload" class="faUpload"></fa-icon>
+    <span>Upload files</span>
+  </div>
+  <input class="file-input" type="file" (change)="uploadFiles($event)" multiple>
+</div>
+
+<div class="indicatior-window" *ngIf="isUploading">
+  <div class="topbar">
+    <div>uploading {{ fileTransferenceData.length}} files</div>
+    <div>
+      <fa-icon *ngIf="!isMinimized" [icon]="faChevronDown" class="faChevronDown" (click)="minimize()"></fa-icon>
+      <fa-icon *ngIf="isMinimized" [icon]="faChevronUp" class="faChevronUp" (click)="minimize()"></fa-icon>
+      <fa-icon [icon]="faTimes" class="faTimes" (click)="cancelAll()"></fa-icon>
+    </div>
+  </div>
+  <div class="content" [ngClass]="isMinimized ? 'slideDown' : 'slideUp'">
+    <app-file-transference-indicator [fileTransferenceData]="fileTransferenceData"></app-file-transference-indicator>
+  </div>
+</div>

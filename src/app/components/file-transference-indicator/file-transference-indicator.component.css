@@ -1,0 +1,47 @@
+.indicatorcontainer {
+    display: flex;
+    margin: 10px;
+    padding: 7px 7px 3px 7px;
+    border: 2px dotted grey;
+  }
+  
+  .filename {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .filesize {
+    font-size: 13px;
+    font-weight: 500;
+    color: grey;
+  }
+  
+  .progressbar {
+    flex: 20;
+    margin: 0 7px;
+  }
+  
+  .faFileAlt {
+    flex: 1;
+    flex: 1;
+    font-size: 41px;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .CheckCircleIcon {
+    flex: 1;
+    font-size: 20px;
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .faTrashAlt {
+    flex: 1;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
